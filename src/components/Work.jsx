@@ -22,7 +22,7 @@ const works = [
       "http://public.tableau.com/app/profile/pramod.bm/viz/Book1_17498925794750/SalesDashboard",
   },
   {
-    imgSrc: "public/images/pest.svg",
+    imgSrc: "/images/pest.svg",
     title: "PestScan – (In Progress)",
     tags: ["IoT", "Machine Learning"],
     projectLink: "#",
