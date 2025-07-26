@@ -8,7 +8,6 @@ const Header = () => {
   const handleMouseEnter = () => {
     if (audioRef.current) {
       audioRef.current.loop = true;
-      audioRef.current.currentTime = 0;
       audioRef.current.play();
     }
   };
@@ -23,8 +22,9 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 z-50 w-full h-20 bg-gradient-to-b from-zinc-900 to-transparent">
       <div className="relative flex items-center justify-between w-full h-full px-4 mx-auto max-w-screen-2xl md:px-6">
-        {/* Left: Logo + Text + Car Icon */}
+        {/* === Left: Logo + Name + Car Icon === */}
         <div className="flex items-center gap-3">
+          {/* Logo + Name */}
           <a href="/" className="flex items-center gap-2">
             <img
               src="/images/logoo.png"
@@ -33,27 +33,27 @@ const Header = () => {
               alt="PRAMOD B M Logo"
               className="object-contain"
             />
-            <h1 className="text-2xl text-white md:text-2xl font-semibold">
-              PRAMOD B M
-            </h1>
-
-            {/* 🚗 Car icon that plays MP3 on hover */}
-            <img
-              src="/images/rangerove.png"
-              width={38}
-              height={38}
-              alt="Car Icon"
-              className="object-contain cursor-pointer"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            />
+            <h1 className="text-2xl text-white font-semibold">PRAMOD B M</h1>
           </a>
 
-          {/* 🔊 Hidden audio element */}
-          <audio ref={audioRef} src="/images/horn2.wav" preload="auto" />
+          {/* Car Icon (slightly left now) */}
+          <div
+            className="ml-[-6px] flex items-center cursor-pointer"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <img
+              src="/images/rangerove.png"
+              width={36}
+              height={36}
+              alt="Car Icon"
+              className="object-contain"
+            />
+            <audio ref={audioRef} src="/images/horn2.wav" preload="auto" />
+          </div>
         </div>
 
-        {/* Right: Navigation */}
+        {/* === Right: Nav + Contact === */}
         <div className="flex items-center gap-4 md:gap-8">
           <button
             className="menu-btn md:hidden"
