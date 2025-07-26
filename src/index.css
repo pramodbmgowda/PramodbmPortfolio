@@ -175,7 +175,7 @@ body {
   }
 }
 .spin-smooth {
-  animation: spin-smooth 10s linear infinite;
+  animation: spin-smooth 12s linear infinite;
   will-change: transform;
   transform-style: preserve-3d;
   backface-visibility: hidden;

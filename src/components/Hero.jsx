@@ -39,19 +39,28 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="pause-on-hover relative w-[280px] h-[350px] mx-auto">
-          {/* Rotating border */}
-          <div className="absolute inset-0 z-0 p-[1.5px] rounded-[30px] spin-smooth bg-[conic-gradient(from_0deg,theme(colors.sky.500),theme(colors.black),theme(colors.sky.500))]">
-            <div className="w-full h-full rounded-[28px] bg-zinc-900"></div>
-          </div>
+        <div className="hidden lg:block">
+          <div className="pause-on-hover relative w-[400px] h-[500px] ml-auto">
+            {/* Rotating conic gradient border */}
+            <div className="absolute inset-0 z-0 p-[2px] rounded-[60px] spin-smooth bg-[conic-gradient(from_0deg,#38bdf8,#0f172a,#38bdf8)] shadow-[0_0_10px_#38bdf8]/20">
+              <div className="w-full h-full rounded-[58px] bg-zinc-900"></div>
+            </div>
 
-          {/* Image */}
-          <div className="absolute inset-0 z-10 overflow-hidden rounded-[28px]">
-            <img
-              src="/images/hero-baner.jpg"
-              alt="Rotating"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-            />
+            {/* Image Layer with background gradient and blend */}
+            <figure className="absolute inset-0 z-10 rounded-[58px] overflow-hidden shadow-2xl">
+              {/* Background gradient for soft splash */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-white via-sky-100 to-sky-300 opacity-70 z-0"></div>
+
+              {/* Blue overlay */}
+              <div className="absolute inset-0 bg-sky-500 mix-blend-overlay opacity-10 z-10"></div>
+
+              {/* Profile image */}
+              <img
+                src="/images/hero-baner.jpg"
+                alt="PRAMOD B M"
+                className="relative z-20 w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 ease-in-out"
+              />
+            </figure>
           </div>
         </div>
       </div>
