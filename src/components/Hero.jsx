@@ -39,14 +39,20 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hidden lg:block">
-          <figure className="w-full max-w-[400px] max-h-[500px] ml-auto bg-gradient-to-t from-sky-400 via-25% via-sky-400/40 to-65% rounded-[60px] overflow-hidden">
+        <div className="pause-on-hover relative w-[280px] h-[350px] mx-auto">
+          {/* Rotating border */}
+          <div className="absolute inset-0 z-0 p-[1.5px] rounded-[30px] spin-smooth bg-[conic-gradient(from_0deg,theme(colors.sky.500),theme(colors.black),theme(colors.sky.500))]">
+            <div className="w-full h-full rounded-[28px] bg-zinc-900"></div>
+          </div>
+
+          {/* Image */}
+          <div className="absolute inset-0 z-10 overflow-hidden rounded-[28px]">
             <img
               src="/images/hero-baner.jpg"
-              alt="PRAMOD B M"
-              className="object-contain w-full h-auto"
+              alt="Rotating"
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
-          </figure>
+          </div>
         </div>
       </div>
     </section>

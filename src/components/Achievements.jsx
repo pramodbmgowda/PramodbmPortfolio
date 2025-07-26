@@ -2,14 +2,14 @@ import AchievementCard from "./achievementCard"; // Changed to uppercase
 
 const achievements = [
   {
-    imgSrc: "/images/Certificate.svg",
+    imgSrc: "images/Certificate-2.png",
     title: "Networking Basics ",
     tags: ["Cisco", "Networking", "Certificate"],
     achievementLink:
       "https://drive.google.com/file/d/1zgljL_EbMdlkVmIU9Y-oTIifJn6IKWTR/view?usp=drive_link",
   },
   {
-    imgSrc: "images/Certificate.svg",
+    imgSrc: "images/Certificate-1.png",
     title: "Green Skills and Artificial Intelligence",
     tags: ["AI Essentials", "Skills4Future", "Certificate"],
     achievementLink:
