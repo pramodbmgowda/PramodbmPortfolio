@@ -1,20 +1,45 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 const Navbar = ({ navOpen }) => {
   const lastActiveLink = useRef(null);
   const activeBox = useRef();
+  const [showNavbar, setShowNavbar] = useState(true);
+  const lastScrollTop = useRef(window.scrollY);
 
   const initActionBox = () => {
-    console.log(lastActiveLink.current);
-    console.log(activeBox.current);
+    if (!lastActiveLink.current || !activeBox.current) return;
     activeBox.current.style.top = lastActiveLink.current.offsetTop + "px";
     activeBox.current.style.left = lastActiveLink.current.offsetLeft + "px";
     activeBox.current.style.width = lastActiveLink.current.offsetWidth + "px";
     activeBox.current.style.height = lastActiveLink.current.offsetHeight + "px";
   };
-  useEffect(initActionBox, []);
-  window.addEventListener("resize", initActionBox);
+
+  useEffect(() => {
+    initActionBox();
+    window.addEventListener("resize", initActionBox);
+
+    const handleScroll = () => {
+      const currentScrollTop = window.scrollY;
+
+      if (currentScrollTop < lastScrollTop.current) {
+        // Scrolling up
+        setShowNavbar(true);
+      } else {
+        // Scrolling down
+        setShowNavbar(false);
+      }
+
+      lastScrollTop.current = currentScrollTop;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("resize", initActionBox);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const activeCurrentList = (event) => {
     lastActiveLink.current?.classList.remove("active");
@@ -49,11 +74,6 @@ const Navbar = ({ navOpen }) => {
       link: "#achievements",
       className: "nav-link",
     },
-    // {
-    //   label: 'Reviews',
-    //   link: '#reviews',
-    //   className: 'nav-link'
-    // },
     {
       label: "Contact",
       link: "#contact",
@@ -62,7 +82,11 @@ const Navbar = ({ navOpen }) => {
   ];
 
   return (
-    <nav className={`navbar ${navOpen ? "active" : ""}`}>
+    <nav
+      className={`navbar ${navOpen ? "active" : ""} ${
+        showNavbar ? "navbar-show" : "navbar-hide"
+      }`}
+    >
       {navItems.map(({ label, link, className, ref }, key) => (
         <a
           href={link}
@@ -71,8 +95,7 @@ const Navbar = ({ navOpen }) => {
           className={className}
           onClick={activeCurrentList}
         >
-          {" "}
-          {label}{" "}
+          {label}
         </a>
       ))}
       <div className="active-box" ref={activeBox}></div>
@@ -80,7 +103,7 @@ const Navbar = ({ navOpen }) => {
   );
 };
 
-Navbar.protoTypes = {
+Navbar.propTypes = {
   navOpen: PropTypes.bool.isRequired,
 };
 

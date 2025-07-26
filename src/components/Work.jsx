@@ -2,28 +2,28 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
   {
-    imgSrc: "/images/ec.png",
+    imgSrc: "/images/project-1.jpg",
     title: "ShopSphare - Ecommerce Platform",
     tags: ["Java", "Angular", "Spring Boot"],
     projectLink: "https://github.com/pramodbmgowda/Shopsphare-EcommerceWeb.git",
   },
   {
-    imgSrc: "/images/ecomm.png",
+    imgSrc: "/images/project-2.png",
     title: "ShopMate - Product Recommendation ChatBot  ",
     tags: ["Python", "Machine Learning"],
     projectLink:
       "https://github.com/pramodbmgowda/Flipkart_Recommendation_Chatbot.git",
   },
   {
-    imgSrc: "/images/tableau.svg",
+    imgSrc: "/images/project-3.png",
     title: "Sales & Performance Dashboard",
     tags: ["Tableau", "Data Visualization"],
     projectLink:
       "http://public.tableau.com/app/profile/pramod.bm/viz/Book1_17498925794750/SalesDashboard",
   },
   {
-    imgSrc: "/images/pest.svg",
-    title: "PestScan – (In Progress)",
+    imgSrc: "/images/logoo.png",
+    title: "PestScan – (Ongoing Project)",
     tags: ["IoT", "Machine Learning"],
     projectLink: "#",
   },
