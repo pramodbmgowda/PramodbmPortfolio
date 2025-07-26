@@ -2,7 +2,7 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
   {
-    imgSrc: "/images/project-1.jpg",
+    imgSrc: "/images/project-1.png",
     title: "ShopSphare - Ecommerce Platform",
     tags: ["Java", "Angular", "Spring Boot"],
     projectLink: "https://github.com/pramodbmgowda/Shopsphare-EcommerceWeb.git",
