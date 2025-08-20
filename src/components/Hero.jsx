@@ -29,7 +29,7 @@ const Hero = () => {
             <ButtonPrimary
               label="Download CV"
               icon="download"
-              href="https://drive.google.com/file/d/1SSok6oZs07DYBOhGQTpZJgrXGJAgmgbC/view?usp=drive_link"
+              href="https://drive.google.com/file/d/17TsOmC1AB0KFWR7Plb25bL9BymwE7e83/view?usp=drive_link"
             />
             <ButtonOutline
               href="#about"
