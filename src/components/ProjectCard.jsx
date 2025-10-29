@@ -1,24 +1,24 @@
 import PropTypes from "prop-types";
 
-const ProjectCard = ({ imgSrc, title, tags, projectLink, classes }) => {
+const ProjectCard = ({ imgSrc, title, tags = [], projectLink, classes = "" }) => {
   return (
     <div
       className={
-        "relative p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors" +
+        "relative p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors " +
         classes
       }
     >
       <figure className="mb-4 rounded-lg image-box aspect-square">
-        <img src={imgSrc} alt={title} loading="laxy" className="image-cover" />
+        <img src={imgSrc} alt={title} loading="lazy" className="image-cover" />
       </figure>
       <div className="flex items-center justify-between gap-4">
         <div>
           <h3 className="mb-3 title-1">{title}</h3>
 
           <div className="flex flex-wrap items-center gap-2">
-            {tags.map((label, kay) => (
+            {tags?.map((label, key) => (
               <span
-                kay={kay}
+                key={key}
                 className="grid items-center h-8 px-3 text-sm rounded-lg text-zinc-400 bg-zinc-50/5"
               >
                 {label}
@@ -33,9 +33,6 @@ const ProjectCard = ({ imgSrc, title, tags, projectLink, classes }) => {
           </span>
         </div>
       </div>
-      {/*
-  <a href={projectLink} target="_blank" className="absolute inset-0"></a>
-*/}
 
       {projectLink && projectLink !== "#" && (
         <a
@@ -52,7 +49,7 @@ const ProjectCard = ({ imgSrc, title, tags, projectLink, classes }) => {
 ProjectCard.propTypes = {
   imgSrc: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  tags: PropTypes.array.isRequired,
+  tags: PropTypes.array,
   projectLink: PropTypes.string,
   classes: PropTypes.string,
 };

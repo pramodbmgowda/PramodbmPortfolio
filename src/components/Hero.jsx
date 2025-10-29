@@ -29,7 +29,7 @@ const Hero = () => {
             <ButtonPrimary
               label="Download CV"
               icon="download"
-              href="https://drive.google.com/file/d/17TsOmC1AB0KFWR7Plb25bL9BymwE7e83/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1aX3ofbbJPlguc4OVX5786ijESDyIwA0H/view?usp=sharing"
             />
             <ButtonOutline
               href="#about"
@@ -56,7 +56,7 @@ const Hero = () => {
 
               {/* Profile image */}
               <img
-                src="/images/hero-baner.jpg"
+                src="/images/hero-baner.png"
                 alt="PRAMOD B M"
                 className="relative z-20 w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 ease-in-out"
               />

@@ -2,7 +2,7 @@ import AchievementCard from "./achievementCard"; // Component for each card
 
 const achievements = [
   {
-    imgSrc: "public/images/Gen_AI.jpg",
+    imgSrc: "/images/Gen_AI.jpg",
     title: "AI Foundations Associate - Oracle",
     className:
       "w-full h-auto rounded-xl filter blur-sm transition duration-500 hover:blur-0",
