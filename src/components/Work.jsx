@@ -2,31 +2,38 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
   {
-    imgSrc: "/images/project-1.png",
+    imgSrc: "/images/logoo.png",
+    title: "Care Sync - HealthCare App",
+    projectLink: "#",
+  },
+  {
+    imgSrc: "/images/logoo.png",
+    title: "Bites Check - Health Tracker",
+    projectLink: "#",
+  },
+  {
+    imgSrc: "/images/logoo.png",
+    title: "PestiScan - AI driven IoT-based Pesticide Detection",
+    projectLink: "https://github.com/pramodbmgowda/AI-Powered-Pesticide-Detection-In-Organic-Produce.git",
+  },
+  {
+    imgSrc: "/images/logoo.png",
     title: "ShopSphare - Ecommerce Platform",
-    tags: ["Java", "Angular", "Spring Boot"],
     projectLink: "https://github.com/pramodbmgowda/Shopsphare-EcommerceWeb.git",
   },
   {
-    imgSrc: "/images/project-2.png",
+    imgSrc: "/images/logoo.png",
     title: "ShopMate - Product Recommendation ChatBot  ",
-    tags: ["Python", "Machine Learning"],
     projectLink:
       "https://github.com/pramodbmgowda/Flipkart_Recommendation_Chatbot.git",
   },
   {
-    imgSrc: "/images/project-3.png",
+    imgSrc: "/images/logoo.png",
     title: "Sales & Performance Dashboard",
-    tags: ["Tableau", "Data Visualization"],
     projectLink:
       "http://public.tableau.com/app/profile/pramod.bm/viz/Book1_17498925794750/SalesDashboard",
   },
-  {
-    imgSrc: "/images/logoo.png",
-    title: "PestScan – (Ongoing Project)",
-    tags: ["IoT", "Machine Learning"],
-    projectLink: "#",
-  },
+  
 ];
 
 const Work = () => {

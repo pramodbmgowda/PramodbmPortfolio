@@ -3,7 +3,7 @@ import { useRef } from "react";
 const aboutItems = [
   {
     label: "Project done",
-    number: 3,
+    number: 6,
   },
   {
     label: "Years of experience",
@@ -26,11 +26,10 @@ const About = () => {
       <div className="container">
         <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
           <p className="mb-4 text-zinc-300 md:mb-8 md:text-xl md:max-w-[60ch]">
-            I’m Pramod B M, currently in my final year of Computer Science
-            Engineering at DSATM, Bengaluru. With a solid foundation in Java,
-            data structures, and web technologies like HTML & CSS, I’m actively
-            building my path toward becoming a skilled Software Developer (SDE).
-            I’m equally driven by my entrepreneurial spirit.
+            Computer Science undergrad with hands-on experience in AI/ML, LLMs, NLP,
+workflow automation, data structures, and prompt engineering. Adept at technical documentation
+and Agile/Scrum methodologies. Seeking to deliver innovative agentic automation for enterprise
+solutions.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 md:gap-7">

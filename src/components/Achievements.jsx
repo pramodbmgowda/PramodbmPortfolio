@@ -2,9 +2,24 @@ import AchievementCard from "./achievementCard"; // Component for each card
 
 const achievements = [
   {
+    imgSrc: "public/images/Gen_AI.jpg",
+    title: "AI Foundations Associate - Oracle",
+    className:
+      "w-full h-auto rounded-xl filter blur-sm transition duration-500 hover:blur-0",
+    achievementLink:
+      "https://drive.google.com/file/d/1XhUIZHPK9Y7l6QYDkxl_Ijq55uZFrwHY/view?usp=drive_link",
+  },
+  {
+    imgSrc: "/images/AI_foundation.jpg",
+    title: " Generative AI - Oracle",
+    className:
+      "w-full h-auto rounded-xl filter blur-sm transition duration-500 hover:blur-0",
+    achievementLink:
+      "https://drive.google.com/file/d/1uvUKC2J33m6CjDZ4Y0UMcsoJrBShZHAk/view?usp=drive_link",
+  },
+  {
     imgSrc: "images/Certificate-2.png",
-    title: "Networking Basics",
-    tags: ["Cisco", "Networking", "Certificate"],
+    title: "Networking Basics - Cisco",
     className:
       "w-full h-auto rounded-xl filter blur-sm transition duration-500 hover:blur-0",
     achievementLink:
@@ -12,8 +27,7 @@ const achievements = [
   },
   {
     imgSrc: "images/Certificate-1.png",
-    title: "Green Skills and Artificial Intelligence",
-    tags: ["AI Essentials", "Skills4Future", "Certificate"],
+    title: "Workshop:Green Skills and Artificial Intelligence",
     className:
       "w-full h-auto rounded-xl filter blur-sm transition duration-500 hover:blur-0",
     achievementLink:

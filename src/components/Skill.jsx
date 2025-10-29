@@ -7,6 +7,16 @@ const skillItem = [
     desc: 'Programming language'
   },
   {
+    imgSrc: '/images/python.svg',
+    label: 'Python',
+    desc: 'Programming language'
+  },
+  {
+    imgSrc: '/images/ai.svg',
+    label: 'Generative AI',
+    desc: 'Building AI - powered solutions'
+  },
+  {
     imgSrc: '/images/css3.svg',
     label: 'HTML5 / CSS3',
     desc: 'Responsive UI development'
@@ -19,7 +29,12 @@ const skillItem = [
   {
     imgSrc: '/images/angular.svg',
     label: 'Angular',
-    desc: 'Frontend framework (Basics)'
+    desc: 'Frontend framework '
+  },
+  {
+    imgSrc: '/images/react.svg',
+    label: 'ReactJS',
+    desc: 'Frontend framework '
   },
   {
     imgSrc: '/images/spring.svg',
@@ -29,12 +44,12 @@ const skillItem = [
   {
     imgSrc: '/images/mysql.svg',
     label: 'MySQL',
-    desc: 'Relational Database (Basic)'
+    desc: 'Relational Database '
   },
   {
-    imgSrc: '/images/aws.svg',
-    label: 'AWS S3',
-    desc: 'Cloud Storage Basics'
+    imgSrc: '/images/mongodb.svg',
+    label: 'MongoDB',
+    desc: 'NoSQL Database '
   },
   {
     imgSrc: '/images/github.svg',
