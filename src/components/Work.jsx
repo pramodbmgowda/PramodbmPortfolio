@@ -9,7 +9,7 @@ const works = [
   {
     imgSrc: "/images/logoo.png",
     title: "Bites Check - Health Tracker",
-    projectLink: "https://github.com/pramodbmgowda/BiteCheck",
+    projectLink: "https://github.com/pramodbmgowda/BiteCheck.git",
   },
   {
     imgSrc: "/images/logoo.png",
