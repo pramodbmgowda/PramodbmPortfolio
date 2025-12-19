@@ -1,71 +1,93 @@
-import { ButtonPrimary, ButtonOutline } from "./Button";
+import React from "react";
+import { ArrowRight, FileText, Github, Linkedin, Twitter } from "lucide-react";
+import { motion } from "framer-motion";
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <section id="home" className="pt-28 lg:pt-36">
-      <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
-        <div>
-          <div className="flex items-center gap-3">
-            <figure className="rounded-lg img-box w-9 h-9">
-              <img
-                src="/images/avatar-1.jpg"
-                width={40}
-                height={40}
-                alt="Pramod portrait"
-                className="image-cover"
-              />
-            </figure>
-            <div className="flex items-center gap-1.5 text-zinc-400 text-sm tracking-wide">
-              <span className="relative w-2 h-2 rounded-full bg-emerald-400">
-                <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping"></span>
-              </span>
-              CSE @ DSATM
-            </div>
-          </div>
-          <h2 className="headline-1 max-w-[15ch]] sm:max-w-[20ch] mt-5 mb-8 lg:mb-10">
-            Beyond code, I dream of entrepreneurship
-          </h2>
-          <div className="flex items-center gap-3">
-            <ButtonPrimary
-              label="Download CV"
-              icon="download"
-              href="https://drive.google.com/file/d/1aX3ofbbJPlguc4OVX5786ijESDyIwA0H/view?usp=sharing"
-            />
-            <ButtonOutline
-              href="#about"
-              label="Scroll down"
-              icon="arrow_downward"
-            />
-          </div>
-        </div>
+    <section 
+      id="home" 
+      className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden"
+    >
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-sky-500/20 blur-[100px] rounded-full -z-10" />
 
-        <div className="hidden lg:block">
-          <div className="pause-on-hover relative w-[400px] h-[500px] ml-auto">
-            {/* Rotating conic gradient border */}
-            <div className="absolute inset-0 z-0 p-[2px] rounded-[60px] spin-smooth bg-[conic-gradient(from_0deg,#38bdf8,#0f172a,#38bdf8)] shadow-[0_0_10px_#38bdf8]/20">
-              <div className="w-full h-full rounded-[58px] bg-zinc-900"></div>
-            </div>
+      <div className="flex flex-col items-center text-center space-y-8 px-4 max-w-5xl mx-auto z-10">
+        
+        {/* Status Badge */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-md"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span className="text-xs font-medium text-emerald-400">Open to Work</span>
+        </motion.div>
 
-            {/* Image Layer with background gradient and blend */}
-            <figure className="absolute inset-0 z-10 rounded-[58px] overflow-hidden shadow-2xl">
-              {/* Background gradient for soft splash */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-white via-sky-100 to-sky-300 opacity-70 z-0"></div>
+        {/* Headline */}
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-5xl md:text-7xl font-bold tracking-tight text-white"
+        >
+          Building Systems with <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-600">
+            Intelligence & Logic.
+          </span>
+        </motion.h1>
 
-              {/* Blue overlay */}
-              <div className="absolute inset-0 bg-sky-500 mix-blend-overlay opacity-10 z-10"></div>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed"
+        >
+          I bridge the gap between <strong>Enterprise Architecture (Salesforce)</strong> and <strong>Agentic AI</strong>. 
+          Currently engineering automated solutions that scale.
+        </motion.p>
 
-              {/* Profile image */}
-              <img
-                src="/images/hero-baner.png"
-                alt="PRAMOD B M"
-                className="relative z-20 w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 ease-in-out"
-              />
-            </figure>
-          </div>
-        </div>
+        {/* Buttons */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center gap-4 pt-4"
+        >
+          <a 
+            href="#work"
+            className="group px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors flex items-center gap-2"
+          >
+            View Projects
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+          
+          <a 
+            href="public/images/PRAMOD_BM_Resume.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-8 py-4 rounded-full bg-zinc-900 border border-zinc-800 text-white font-medium hover:bg-zinc-800 transition-colors flex items-center gap-2"
+          >
+            <FileText className="w-4 h-4" />
+            View Resume
+          </a>
+        </motion.div>
+
+        {/* Socials */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="pt-12 flex items-center gap-6 text-zinc-500"
+        >
+          <a href="https://github.com/pramodbmgowda" target="_blank" className="hover:text-white transition-colors"><Github size={24} /></a>
+          <a href="https://www.linkedin.com/in/pramodbm7" target="_blank" className="hover:text-white transition-colors"><Linkedin size={24} /></a>
+         
+        </motion.div>
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

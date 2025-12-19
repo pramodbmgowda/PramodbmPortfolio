@@ -1,110 +1,41 @@
-import { useRef, useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { cn } from "../lib/utils";
 
-const Navbar = ({ navOpen }) => {
-  const lastActiveLink = useRef(null);
-  const activeBox = useRef();
-  const [showNavbar, setShowNavbar] = useState(true);
-  const lastScrollTop = useRef(window.scrollY);
+const navItems = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Work", href: "#work" },
+  { name: "Contact", href: "#contact" },
+];
 
-  const initActionBox = () => {
-    if (!lastActiveLink.current || !activeBox.current) return;
-    activeBox.current.style.top = lastActiveLink.current.offsetTop + "px";
-    activeBox.current.style.left = lastActiveLink.current.offsetLeft + "px";
-    activeBox.current.style.width = lastActiveLink.current.offsetWidth + "px";
-    activeBox.current.style.height = lastActiveLink.current.offsetHeight + "px";
-  };
-
-  useEffect(() => {
-    initActionBox();
-    window.addEventListener("resize", initActionBox);
-
-    const handleScroll = () => {
-      const currentScrollTop = window.scrollY;
-
-      if (currentScrollTop < lastScrollTop.current) {
-        // Scrolling up
-        setShowNavbar(true);
-      } else {
-        // Scrolling down
-        setShowNavbar(false);
-      }
-
-      lastScrollTop.current = currentScrollTop;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("resize", initActionBox);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const activeCurrentList = (event) => {
-    lastActiveLink.current?.classList.remove("active");
-    event.target.classList.add("active");
-    lastActiveLink.current = event.target;
-
-    activeBox.current.style.top = event.target.offsetTop + "px";
-    activeBox.current.style.left = event.target.offsetLeft + "px";
-    activeBox.current.style.width = event.target.offsetWidth + "px";
-    activeBox.current.style.height = event.target.offsetHeight + "px";
-  };
-
-  const navItems = [
-    {
-      label: "Home",
-      link: "#home",
-      className: "nav-link active",
-      ref: lastActiveLink,
-    },
-    {
-      label: "About",
-      link: "#about",
-      className: "nav-link",
-    },
-    {
-      label: "Work",
-      link: "#work",
-      className: "nav-link",
-    },
-    {
-      label: "Certifications",
-      link: "#achievements",
-      className: "nav-link",
-    },
-    {
-      label: "Contact",
-      link: "#contact",
-      className: "nav-link md:hidden",
-    },
-  ];
+export default function Navbar() {
+  const [activeTab, setActiveTab] = useState("Home");
 
   return (
-    <nav
-      className={`navbar ${navOpen ? "active" : ""} ${
-        showNavbar ? "navbar-show" : "navbar-hide"
-      }`}
-    >
-      {navItems.map(({ label, link, className, ref }, key) => (
-        <a
-          href={link}
-          key={key}
-          ref={ref}
-          className={className}
-          onClick={activeCurrentList}
-        >
-          {label}
-        </a>
-      ))}
-      <div className="active-box" ref={activeBox}></div>
-    </nav>
+    <div className="fixed top-4 inset-x-0 max-w-fit mx-auto z-50">
+      <nav className="glass-card flex items-center gap-1 p-1 rounded-full ring-1 ring-white/10">
+        {navItems.map((item) => (
+          <a
+            key={item.name}
+            href={item.href}
+            onClick={() => setActiveTab(item.name)}
+            className={cn(
+              "relative px-4 py-2 text-sm font-medium transition-colors duration-200 z-10",
+              activeTab === item.name ? "text-white" : "text-zinc-400 hover:text-zinc-200"
+            )}
+          >
+            {activeTab === item.name && (
+              <motion.div
+                layoutId="active-pill"
+                className="absolute inset-0 bg-zinc-800/80 rounded-full -z-10"
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              />
+            )}
+            {item.name}
+          </a>
+        ))}
+      </nav>
+    </div>
   );
-};
-
-Navbar.propTypes = {
-  navOpen: PropTypes.bool.isRequired,
-};
-
-export default Navbar;
+}
