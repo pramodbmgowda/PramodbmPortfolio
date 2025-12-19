@@ -66,7 +66,7 @@ export default function Hero() {
           </a>
           
           <a 
-            href="public/images/PRAMOD_BM_Resume.pdf" 
+            href="images/PRAMOD_BM_Resume.pdf" 
             target="_blank" 
             rel="noopener noreferrer"
             className="px-8 py-4 rounded-full bg-zinc-900 border border-zinc-800 text-white font-medium hover:bg-zinc-800 transition-colors flex items-center gap-2"
