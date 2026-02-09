@@ -1,98 +1,78 @@
 import React from "react";
-import { Github, Smartphone, Cloud, Database, Cpu } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
+import { motion } from "framer-motion";
 
-const projects = [
+const experiments = [
   {
-    title: "Archie - AI Tutoring Agent",
-    description: "A multi-modal React Native app leveraging Gemini 1.5 Flash. Features a custom 'Math Canvas' for handwritten equation solving and vision-based homework analysis.",
-    tags: ["React Native", "Gemini 1.5", "Node.js"],
-    link: "https://github.com/pramodbmgowda/-archie-savvy-app.git",
-    icon: <Smartphone className="text-pink-400" size={20} />,
-    bg: "bg-pink-900/10",
-    border: "border-pink-500/20"
+    title: "Agri-Sense",
+    category: "IoT & Data Science",
+    description: "An automated pesticide detection system using IoT sensors. Designed to help farmers analyze chemical residue levels in real-time.",
+    tags: ["Research", "IoT", "Python", "Hardware"],
+    status: "Prototype",
   },
   {
-    title: "IND Tax Bot (RAG)",
-    description: "Serverless RAG application for interpreting Indian Tax Laws. Architected a fault-tolerant 'stealth' scraping pipeline to bypass WAF protections.",
-    tags: ["Python", "LlamaIndex", "Pinecone"],
-    link: "https://github.com/pramodbmgowda/indian-tax-bot.git",
-    icon: <Database className="text-amber-400" size={20} />,
-    bg: "bg-amber-900/10",
-    border: "border-amber-500/20"
+    title: "Tax-GPT Advisor",
+    category: "AI & LegalTech",
+    description: "A Streamlit-based RAG application that digests Indian Tax Law documents to provide accurate, citation-backed answers to users.",
+    tags: ["LLM", "Streamlit", "Python", "RAG"],
+    status: "MVP",
   },
   {
-    title: "Salesforce Lead CRM",
-    description: "End-to-end CRM implementation for B2B retail. Automated lead capture, routing, and scoring rules. Designed real-time dashboards for pipeline forecasting.",
-    tags: ["Salesforce", "Apex", "Automation"],
-    link: "https://github.com/pramodbmgowda/Lead-Management-Sales-Tracking.git",
-    icon: <Cloud className="text-sky-400" size={20} />,
-    bg: "bg-sky-900/10",
-    border: "border-sky-500/20"
+    title: "Enterprise CRM Mod",
+    category: "Salesforce Automation",
+    description: "A comprehensive Salesforce module featuring Apex automation and LWC interfaces to streamline complex business data flows.",
+    tags: ["Apex", "LWC", "Salesforce", "Cloud"],
+    status: "Completed",
   },
-  {
-    title: "PestiScan IoT",
-    description: "AI-driven pesticide detection system integrating hardware (Arduino) with software (Python ML models). Solved real-world organic produce safety challenges.",
-    tags: ["IoT", "Python", "Arduino"],
-    link: "https://github.com/pramodbmgowda/AI-Powered-Pesticide-Detection-In-Organic-Produce.git",
-    icon: <Cpu className="text-emerald-400" size={20} />,
-    bg: "bg-emerald-900/10",
-    border: "border-emerald-500/20"
-  }
 ];
 
-export default function Projects() {
+export default function Labs() {
   return (
-    <section id="work" className="px-4 max-w-7xl mx-auto py-24">
-      <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-4">
+    <section id="labs" className="py-24 px-4 max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row justify-between items-end mb-12">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Selected Works</h2>
-          <p className="text-zinc-400 mt-2 max-w-lg">
-             A showcase of complex systems I've engineered.
+          <h2 className="text-3xl font-bold text-white mb-4">The Lab</h2>
+          <p className="text-zinc-400 max-w-xl">
+            My digital playground. Here are the prototypes, experiments, and solutions 
+            I am currently engineering.
           </p>
         </div>
       </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.map((project, i) => (
-          <div 
-            key={i} 
-            className={`group relative flex flex-col justify-between p-6 md:p-8 rounded-3xl border ${project.border} ${project.bg} hover:bg-opacity-40 transition-all duration-300 backdrop-blur-sm`}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {experiments.map((item, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className="group relative bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-zinc-700 transition-colors"
           >
-            <div>
-              <div className="flex justify-between items-start mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-zinc-950/50 flex items-center justify-center border border-zinc-700/50 shadow-lg">
-                   {project.icon}
-                </div>
-                
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="p-2 rounded-full bg-white/5 hover:bg-white hover:text-black transition-colors text-zinc-400"
-                >
-                  <Github size={20} />
-                </a>
-              </div>
-              
-              <h3 className="text-2xl font-bold text-white mb-3">
-                {project.title}
-              </h3>
-              <p className="text-zinc-300 text-sm md:text-base leading-relaxed mb-8 opacity-90">
-                {project.description}
-              </p>
+            <div className="flex justify-between items-start mb-4">
+              <span className="text-xs font-medium px-2 py-1 rounded-md bg-zinc-800 text-zinc-400 border border-zinc-700">
+                {item.category}
+              </span>
+              <span className={`text-xs font-bold px-2 py-1 rounded-full ${
+                item.status === 'Prototype' ? 'bg-purple-500/10 text-purple-400' : 
+                item.status === 'MVP' ? 'bg-blue-500/10 text-blue-400' : 'bg-green-500/10 text-green-400'
+              }`}>
+                {item.status}
+              </span>
             </div>
+            
+            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">
+              {item.title}
+            </h3>
+            <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+              {item.description}
+            </p>
 
             <div className="flex flex-wrap gap-2 mt-auto">
-              {project.tags.map(tag => (
-                <span 
-                  key={tag} 
-                  className="text-xs font-medium px-2.5 py-1 rounded-md bg-zinc-950/40 text-zinc-400 border border-zinc-700/30"
-                >
-                  {tag}
-                </span>
+              {item.tags.map(tag => (
+                <span key={tag} className="text-xs text-zinc-500">#{tag}</span>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

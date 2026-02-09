@@ -1,22 +1,36 @@
 import React from "react";
+import { Mail, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="py-12 border-t border-white/5 bg-zinc-950">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-          Ready to build something extraordinary?
-        </h2>
-        <a 
-          href="mailto:pramodbmgowda7@gmail.com" 
-          className="inline-block px-8 py-3 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors"
-        >
-          Let's Talk
-        </a>
+    <footer id="contact" className="py-20 border-t border-slate-900 bg-[#020617] text-center">
+      <div className="max-w-4xl mx-auto px-4">
         
-        <div className="mt-12 text-zinc-500 text-sm flex flex-col items-center gap-2">
-           <p>&copy; {new Date().getFullYear()} Pramod B M. All rights reserved.</p>
-           <p className="text-zinc-600">Built with React, Tailwind & Framer Motion.</p>
+        <p className="text-slate-400 mb-8">
+           Feel free to reach out if you'd like to connect.
+        </p>
+        
+        <div className="flex justify-center gap-6">
+            <a 
+            href="mailto:pramodbmgowda7@gmail.com" 
+            className="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"
+            >
+            <Mail className="w-5 h-5" />
+            Email
+            </a>
+            
+            <a 
+            href="https://www.linkedin.com/in/pramodbm7" 
+            target="_blank"
+            className="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"
+            >
+            <Linkedin className="w-5 h-5" />
+            LinkedIn
+            </a>
+        </div>
+        
+        <div className="mt-12 text-slate-700 text-xs">
+           <p>&copy; {new Date().getFullYear()} Pramod B M.</p>
         </div>
       </div>
     </footer>
