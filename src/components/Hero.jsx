@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowRight, Send } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -24,21 +24,22 @@ export default function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
           </span>
           <span className="text-xs font-bold text-blue-300 tracking-wide uppercase">
-            Staggering Business Mind
+            Open to Opportunities
           </span>
         </div>
 
         {/* Headline */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1]">
-          Building My Path Through <br />
+          Engineering Intelligent <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-            Persistence.
+            Systems.
           </span>
         </h1>
 
         {/* Description */}
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-         Just want to make my way.
+          CS Engineering undergraduate building full-stack apps, LLM-powered tools,
+          and AI-driven systems &mdash; from RAG pipelines to IoT hardware integration.
         </p>
 
         {/* Buttons */}
@@ -56,7 +57,7 @@ export default function Hero() {
             href="#contact" 
             className="px-8 py-4 rounded-full bg-slate-900 border border-slate-800 text-white font-medium hover:bg-slate-800 transition-colors flex items-center gap-2"
           >
-            <TrendingUp className="w-5 h-5" />
+            <Send className="w-5 h-5" />
             Contact
           </a>
         </div>

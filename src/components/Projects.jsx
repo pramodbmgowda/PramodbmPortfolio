@@ -4,24 +4,24 @@ import { motion } from "framer-motion";
 
 const experiments = [
   {
-    title: "Agri-Sense",
+    title: "PestiScan IoT",
     category: "IoT & Data Science",
-    description: "An automated pesticide detection system using IoT sensors. Designed to help farmers analyze chemical residue levels in real-time.",
-    tags: ["Research", "IoT", "Python", "Hardware"],
+    description: "An end-to-end safety system bridging hardware sensors with software analytics. Integrates Arduino telemetry with Python ML models to detect pesticide residues on produce in real-time.",
+    tags: ["IoT", "Python", "Machine Learning", "Hardware"],
     status: "Prototype",
   },
   {
-    title: "Tax-GPT Advisor",
+    title: "IND Tax Bot",
     category: "AI & LegalTech",
-    description: "A Streamlit-based RAG application that digests Indian Tax Law documents to provide accurate, citation-backed answers to users.",
-    tags: ["LLM", "Streamlit", "Python", "RAG"],
+    description: "A serverless RAG application interpreting Indian Tax Laws with high retrieval accuracy. Includes a fault-tolerant scraping pipeline that reduced data ingestion failure rates by 90%.",
+    tags: ["LLM", "RAG", "Python", "Vector DB"],
     status: "MVP",
   },
   {
-    title: "Enterprise CRM Mod",
-    category: "Salesforce Automation",
-    description: "A comprehensive Salesforce module featuring Apex automation and LWC interfaces to streamline complex business data flows.",
-    tags: ["Apex", "LWC", "Salesforce", "Cloud"],
+    title: "Archie Tutor",
+    category: "AI & EdTech",
+    description: "A cross-platform study agent with a custom 'Draft & Context' system for real-time batch document analysis, orchestrating a Python microservice with Gemini 2.0 for multi-modal reasoning.",
+    tags: ["LLM", "Python", "Gemini", "Multi-modal"],
     status: "Completed",
   },
 ];

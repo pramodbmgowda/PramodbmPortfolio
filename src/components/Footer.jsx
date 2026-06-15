@@ -3,7 +3,7 @@ import { Mail, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="py-20 border-t border-slate-900 bg-[#020617] text-center">
+    <footer className="py-20 border-t border-slate-900 bg-[#020617] text-center">
       <div className="max-w-4xl mx-auto px-4">
         
         <p className="text-slate-400 mb-8">
@@ -22,6 +22,7 @@ export default function Footer() {
             <a 
             href="https://www.linkedin.com/in/pramodbm7" 
             target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"
             >
             <Linkedin className="w-5 h-5" />

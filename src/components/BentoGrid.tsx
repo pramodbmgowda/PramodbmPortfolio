@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "../lib/utils";
 import { motion } from "framer-motion";
-import { Briefcase, Globe, Target } from "lucide-react";
+import { Code2, Cpu, Target } from "lucide-react";
 
 const BentoCard = ({ className, children }) => (
   <motion.div
@@ -30,18 +30,17 @@ export default function BentoGrid() {
                 <div className="w-24 h-24 rounded-full border-2 border-slate-700 overflow-hidden bg-slate-800">
                     <img src="/images/avatar-1.jpg" alt="Pramod" className="w-full h-full object-cover" />
                 </div>
-                {/* ADJUSTED: Neutral badge */}
                 <div className="px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20">
                     OPEN TO OPPORTUNITIES
                 </div>
              </div>
              <div>
                 <h3 className="text-3xl font-bold text-white mb-4">Pramod B M</h3>
-                {/* ADJUSTED: Simple, humble bio */}
                 <p className="text-slate-400 text-lg leading-relaxed">
-                  I am based in Bengaluru, India. I am deeply interested in 
-                  <strong> Business Management</strong> and <strong>Strategy</strong>. 
-                  Always looking to learn and grow.
+                  I'm a Computer Science Engineering undergraduate based in Bengaluru, focused on
+                  <strong> Full-Stack Development</strong>, <strong>AI/ML</strong>, and{" "}
+                  <strong>LLM-powered systems</strong>. I enjoy architecting intelligent
+                  applications and turning data into working products.
                 </p>
              </div>
            </div>
@@ -50,12 +49,11 @@ export default function BentoGrid() {
         {/* 2. Key Skills */}
         <BentoCard className="md:col-span-1">
           <div className="flex items-center gap-3 mb-6 text-emerald-400">
-            <Briefcase className="w-6 h-6" />
+            <Code2 className="w-6 h-6" />
             <h4 className="font-bold text-white text-lg">Focus Areas</h4>
           </div>
           <ul className="space-y-3">
-             {/* ADJUSTED: General business skills */}
-             {['Business Strategy', 'Market Research', 'Management', 'Operations'].map(skill => (
+             {['Generative AI & LLMs', 'RAG Systems', 'Full-Stack Development', 'AI Workflow Orchestration'].map(skill => (
               <li key={skill} className="flex items-center gap-2 text-slate-400 text-sm">
                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                  {skill}
@@ -64,14 +62,15 @@ export default function BentoGrid() {
           </ul>
         </BentoCard>
 
-        {/* 3. Global Mindset */}
+        {/* 3. Curiosity / Tech Interests */}
         <BentoCard className="md:col-span-1">
           <div className="flex items-center gap-3 mb-6 text-blue-400">
-            <Globe className="w-6 h-6" />
+            <Cpu className="w-6 h-6" />
             <h4 className="font-bold text-white text-lg">Curiosity</h4>
           </div>
           <p className="text-slate-400 text-sm leading-relaxed">
-            I enjoy exploring how markets work in different parts of the world and understanding economic trends.
+            I enjoy exploring how AI systems, hardware telemetry, and data pipelines come
+            together &mdash; from vector databases to IoT sensor integration.
           </p>
         </BentoCard>
 
@@ -82,21 +81,19 @@ export default function BentoGrid() {
                <Target size={32} />
              </div>
              <div>
-               {/* ADJUSTED: Removed "Execution First" */}
                <h4 className="text-xl font-bold text-white">My Approach</h4>
-               <p className="text-slate-400 mt-1">Believing in consistency and hard work.</p>
+               <p className="text-slate-400 mt-1">Build it right, ship it fast, optimize relentlessly.</p>
              </div>
            </div>
            
-           {/* ADJUSTED: Removed fake stats, kept simple values */}
            <div className="flex gap-12 text-center">
              <div>
-               <span className="block text-xl font-bold text-white">Focused</span>
-               <span className="text-xs text-slate-500 uppercase tracking-wider">Mindset</span>
+               <span className="block text-xl font-bold text-white">90%</span>
+               <span className="text-xs text-slate-500 uppercase tracking-wider">Failure Rate Reduction</span>
              </div>
              <div>
-               <span className="block text-xl font-bold text-white">Driven</span>
-               <span className="text-xs text-slate-500 uppercase tracking-wider">Attitude</span>
+               <span className="block text-xl font-bold text-white">3+</span>
+               <span className="text-xs text-slate-500 uppercase tracking-wider">AI/IoT Projects</span>
              </div>
            </div>
         </BentoCard>
